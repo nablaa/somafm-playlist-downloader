@@ -38,7 +38,10 @@ def select_best_playlist_url(pls):
 
 
 def pls_to_m3u(pls):
-    streams = [line.split("=")[1] for line in pls.splitlines() if line.startswith("File") and "=" in line]
+    streams = [line.split("=")[1]
+               for line in pls.splitlines()
+               if line.startswith("File") and "=" in line]
+
     return "\n".join(streams) + "\n"
 
 
