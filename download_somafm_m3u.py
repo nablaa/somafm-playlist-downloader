@@ -4,7 +4,7 @@ import os
 from xml.etree import ElementTree as ET
 import requests
 
-SOMAFM_URL = "http://api.somafm.com/channels.xml"
+SOMAFM_URL = "https://api.somafm.com/channels.xml"
 
 
 def main():
