@@ -30,6 +30,10 @@ def create_playlist_from_channel_data(channel):
 
 def select_best_playlist_url(pls):
     basename, _ = os.path.splitext(pls)
+
+    # SomaFM API channels.xml doens't list the high quality (128) AAC stream in
+    # in the list of available streams. We have to check the existence of it by
+    # making an HTTP query and seeing if the relevant url exists.
     higher_quality_pls = basename + "130.pls"
     response = requests.get(higher_quality_pls)
     if response.status_code == 200:
